@@ -1,0 +1,152 @@
+.entrance{
+    display:flex;
+    flex-direction: row;
+}
+.bookstore{
+    max-width: 45rem;
+    height: auto;
+    display: block;
+    
+}
+.logo{
+    width: 7.5rem;
+    height: 4.875rem;
+    margin-left: 15.9375rem;
+    margin-top: 5rem;
+
+}
+
+.welcome{
+    max-width: 18rem;
+    height: 5.4375rem;
+    margin-left: 8.125rem;
+    margin-top: 6.3125rem;
+    gap: 1.25rem;
+}
+.welcome>h2{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 24px;
+    width: 10.0625rem;
+    height: 2.0625rem;
+    color:#09093799
+}
+.welcome>h1{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    color: #090937
+}
+.email{
+    width: 20rem;
+    height: 6.0625rem;
+    margin-top: 7rem;
+    margin-left: 8.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.email>label{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    color:#090937
+}
+.emailInput{
+    width: 20rem;
+    height: 3.75rem;
+    border-radius: 4px;
+    padding: 16px;
+    gap: 10px;
+    background-color: #f4f4ff;
+    border:none;
+    font-family: 'Manrope',sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.emailInput:focus{
+    border:none;
+    outline: none;
+    background-color: #d1d1da;
+    transition: 0.30s;
+}
+.senha{
+    width: 25rem;
+    height: 6.0625rem;
+    margin-top:3.125rem;
+    margin-left: 8.125rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.senha>label{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    color:#090937
+}
+.senhaInput{
+    width: 20rem;
+    height: 3.75rem;
+    border-radius: 4px;
+    padding: 16px;
+    gap: 10px;
+    background-color: #f4f4ff;
+    border:none;
+    font-family: 'Manrope',sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+.senhaInput:focus{
+    border:none;
+    outline: none;
+    background-color: #d1d1da;
+    transition: 0.30s;
+}
+.log{
+    display:flex;
+    flex-direction: column;
+}
+.enter{
+    width: 22rem;
+    height: 3.75rem;
+    margin-top: 5rem;
+    border-radius: 4px;
+    margin-left: 8.125rem;
+    background-color:#EF6B4A;
+    color:#ffff;
+    font-family: 'Manrope',sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 24px;
+    border:none;
+    cursor: pointer;
+}
+.enter:hover{
+    background-color:#fa3e0f;
+    transition: 0.30s;
+}
+.signUp{
+    width: 22rem;
+    height: 3.75rem;
+    margin-top: 1.25rem;
+    border-radius: 4px;
+    margin-left: 8.125rem;
+    background-color: #ffff;
+    color:#6251DD;
+    font-family: 'Manrope',sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 24px;
+    border:1px solid #6251DD;
+    cursor: pointer;
+}
+.signUp:hover{
+    background-color: #6251DD;
+    color: #fff;
+    transition: 0.45s;
+}
