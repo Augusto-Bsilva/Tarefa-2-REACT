@@ -28,4 +28,10 @@
     font-style: Bold;
     font-size: 20px;
     border:none;
+    cursor: pointer;
+}
+.superior>button:hover{
+    transform: scale(1.1,1.1);
+    transition: 0.5s;
+    color: #f14d23;
 }
