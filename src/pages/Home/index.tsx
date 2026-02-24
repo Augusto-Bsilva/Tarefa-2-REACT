@@ -8,15 +8,15 @@ export default function Home(){
     const generos = ['Best-sellers', 'Clássicos','Infantil','Fantasia','Suspense','Distopia','Ficção Científica']
    
     return(
-         <>
+         <section>
          <aside>
             <img src={Painel} className={style.outdoor}/>
         </aside>
-        <div className={style.line}>
+        <div className={style.lines}>
             {generos.map((categoria)=>(
                 <FileiraGenero key={categoria} genero={categoria} />
             ))}
         </div>
-        </>
+        </section>
     )
 }
