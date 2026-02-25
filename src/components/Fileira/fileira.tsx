@@ -34,7 +34,7 @@ export default function FileiraGenero ( { genero }: { genero: string } ){
                     <button onClick={handleClick}>Ver mais</button>
             </header>
             <div className={style.lineUp}>
-                {livros?.map((livro)=>(
+                {livros.map((livro)=>(
                     <Card 
                         key={livro.id}
                         {...livro}
