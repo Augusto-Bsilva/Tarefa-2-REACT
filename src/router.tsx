@@ -28,8 +28,8 @@ const router = createBrowserRouter([
 
             },
             {
-                path: "vermais",
-                element: <VerMais />
+                path: "vermais:genero",
+                element: <VerMais/>
 
 
             },
