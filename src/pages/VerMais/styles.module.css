@@ -104,3 +104,12 @@
     position: absolute;
     font-display: block;
 }
+
+.error{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 24px;
+    color:#090937;
+    margin-left: 10px;
+}

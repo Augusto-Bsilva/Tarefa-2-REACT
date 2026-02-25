@@ -75,12 +75,18 @@ export default function VerMais(){
                     <h1>{genero}</h1>
                 </div>
                 <div className={style.lines}>
-                    {livros.map((livro)=>(
+                    {livros.length>0?(
+                        livros.map((livro)=>(
                         <Card2 
                             key={livro.id}
                             {...livro}
                         />
-                    ))}
+                    ))
+                    ):(
+                        <div>
+                            <h2 className={style.error}>Nenhum livro encontrado!</h2>
+                        </div>
+                    )}
                 </div>
             </div>
 
