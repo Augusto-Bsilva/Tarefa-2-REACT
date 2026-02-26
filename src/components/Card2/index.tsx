@@ -6,7 +6,7 @@ export default function Card ({ id,titulo ,autor,genero,preco,sinopse,capa }:boo
     
     const navigate = useNavigate()
     function handleClick(){
-        navigate(`book/${id}`)
+        navigate(`/home/book/${id}`)
     }
     
     
