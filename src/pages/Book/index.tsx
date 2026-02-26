@@ -14,7 +14,7 @@ export default function Book(){
     return(
         <section>
             
-             <div className={style.title}>
+            <div className={style.title}>
                 <button 
                     onClick={handleClick}>
                     <img src={Arrow} 
@@ -43,7 +43,9 @@ export default function Book(){
                 </div>
             
             </div>
-           
+           <div className={style.last}>
+                <button className={style.buy}><h1 className={style.price}>R${book.preco}</h1><h1 className={style.add}>Adicionar ao carrinho</h1></button>
+           </div>
         </section>
            
         
