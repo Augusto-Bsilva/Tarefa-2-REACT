@@ -9,9 +9,12 @@ export default function Header(){
     function handleClick(){
         navigate('/')
     }
+    function handleBack(){
+        navigate('/home')
+    }
     return(
         <header className={style.menu}>
-            <img src={Logo} className={style.logo}/>
+            <button onClick={handleBack} className={style.logo}><img src={Logo} className={style.logo}/></button>
             <div className={style.buttons}>
                 <button className={style.button} onClick={handleClick}>
                     <img src={Profile} className={style.pic} />

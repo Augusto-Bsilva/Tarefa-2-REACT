@@ -14,6 +14,10 @@
     width: 3.75rem;
     height: 2.4375rem;
     margin-left: .625rem;
+    padding:0;
+    background:none;
+    border:none;
+    cursor:pointer;
 }
 .buttons{
     width: 7.25rem;
