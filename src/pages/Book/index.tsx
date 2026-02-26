@@ -8,7 +8,7 @@ export default function Book(){
     const book: bookProps = useLoaderData()
     const navigate = useNavigate();
     function handleClick(){
-        navigate(`/home/vermais/${book.genero}`)
+        navigate('/home')
     }
   
     return(
