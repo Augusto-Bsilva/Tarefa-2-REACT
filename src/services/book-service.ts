@@ -7,12 +7,15 @@ import { baseService } from "./base-service";
 
 class BookService extends baseService {
 
-    public async books(limit: number = 4): Promise<HttpResponse<bookProps[]>>{
+    public async books(limit: number = 4, genero:string): Promise<HttpResponse<bookProps[]>>{
         return this.execute<void, bookProps[]>({
 
             method:"GET",
             url: '/livros',
-            params: { _limit: String(limit)}
+            params: { 
+                _limit: String(limit),
+                genero:genero
+            }
         })
     }
     public async bookByID(id:number): Promise<HttpResponse<bookProps>>{

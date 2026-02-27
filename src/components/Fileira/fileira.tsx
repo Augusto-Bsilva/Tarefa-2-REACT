@@ -1,29 +1,15 @@
-import { useEffect, useState } from 'react'
-
-import type bookProps  from '../../types/livros'
 import Card from '../Card/Card'
 import style from './styles.module.css'
-import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { useBooks } from '../../hooks/use-books'
 
 export default function FileiraGenero ( { genero }: { genero: string } ){
-    const [livros,setLivros] = useState<bookProps[]>([])
     const navigate = useNavigate()
     function handleClick(){
         navigate(`vermais/${genero}`)
     }
-    useEffect(()=>{
-         const config={
-            params:{
-                _limit: 4,
-                genero:genero
-
-            }
-        }
-        axios.get('http://localhost:3000/livros',config)
-        .then((response)=> setLivros(response.data))
-        .catch((erro)=>{console.error('Erro na requisição',erro);})
-    },[])
+    const { data:livros, isPending, isError } = useBooks(genero)
+   
     
    
 
@@ -34,12 +20,20 @@ export default function FileiraGenero ( { genero }: { genero: string } ){
                     <button onClick={handleClick}>Ver mais</button>
             </header>
             <div className={style.lineUp}>
-                {livros.map((livro)=>(
-                    <Card 
-                        key={livro.id}
-                        {...livro}
-                    />
-                ))}
+            {!isPending && !isError && livros && livros.length>0?(
+                livros.map((livro)=>(
+                <Card 
+                    key={livro.id}
+                    {...livro}
+                />
+                ))
+                ):(
+            !isPending && !isError &&(
+                    <div>
+                        <h2 className={style.error}>Nenhum livro encontrado!</h2>
+                    </div>
+            )
+            )}
             </div>
         </section>
     )

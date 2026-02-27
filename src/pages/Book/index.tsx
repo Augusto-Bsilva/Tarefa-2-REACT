@@ -1,6 +1,6 @@
 
 import { useLoaderData, useNavigate } from "react-router-dom"
-import type bookProps from "../../types/Livros"
+import type bookProps from "../../types/livros"
 import Arrow from '../../assets/Arrow.png'
 import style from './styles.module.css'
 

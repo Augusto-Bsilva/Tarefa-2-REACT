@@ -1,23 +1,22 @@
-import { useEffect, useState } from "react";
-import type bookProps from "../../types/Livros";
-import axios from "axios";
+import { useState } from "react";
 import style from './styles.module.css'
 import { useNavigate, useParams } from "react-router-dom"
 import Lupa from '../../assets/Search.png'
 import Arrow from '../../assets/Arrow.png'
 import Card2 from '../../components/Card2'
+import { useVerMais } from "../../hooks/use-books-by-genero";
 
 
 export default function VerMais(){
-    const [livros,setLivros] = useState<bookProps[]>([])
-    const [busca,setBusca] = useState<boolean>(false)
     const [titulo, setTitulo] = useState<string>('')
+    const [busca, setBusca] = useState<string>('')
+    
     const navigate = useNavigate()
     const { genero } = useParams()
 
     function handleSubmit(e){
         e.preventDefault();
-        setBusca(!busca)
+        setBusca(titulo)
     }
     function handleChange(e){
         e.preventDefault();
@@ -27,30 +26,7 @@ export default function VerMais(){
     function handleClick(){
         navigate('/home')
     }
-    
-    useEffect(()=>{
-            if (busca) {
-                const config={
-                params:{
-                genero:genero,
-                titulo:titulo
-                }
-             }
-             axios.get('http://localhost:3000/livros',config)
-             .then((response)=> setLivros(response.data))
-             .catch((erro)=>{console.error('Erro na requisição',erro);})
-            }else{
-                const config={
-                params:{
-                genero:genero,
-                }
-             }
-             axios.get('http://localhost:3000/livros',config)
-             .then((response)=> setLivros(response.data))
-             .catch((erro)=>{console.error('Erro na requisição',erro);})
-            }
-
-         },[busca])
+     const { data:livros, isPending, isError } = useVerMais(genero||"",busca)
     
          return(
         <section>
@@ -75,7 +51,9 @@ export default function VerMais(){
                     <h1>{genero}</h1>
                 </div>
                 <div className={style.lines}>
-                    {livros.length>0?(
+                    {isPending && <h2>Buscando Livros...</h2>}
+                    {isError && <h2>Erro ao carregar livros</h2>}
+                    {!isPending && !isError && livros && livros.length>0?(
                         livros.map((livro)=>(
                         <Card2 
                             key={livro.id}
@@ -83,9 +61,11 @@ export default function VerMais(){
                         />
                     ))
                     ):(
-                        <div>
-                            <h2 className={style.error}>Nenhum livro encontrado!</h2>
-                        </div>
+                    !isPending && !isError &&(
+                    <div>
+                        <h2 className={style.error}>Nenhum livro encontrado!</h2>
+                    </div>
+                    )
                     )}
                 </div>
             </div>
