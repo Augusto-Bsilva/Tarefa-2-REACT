@@ -4,8 +4,6 @@ import Home from './pages/Home';
 import Book from './pages/Book';
 import VerMais from './pages/VerMais'
 import RootLayout from "./layouts/RootLayout";
-import bookLoader from "./loaders/bookLoader";
-import BookBoundery from './error-boundery/BookBoundery';
 
 const router = createBrowserRouter([
     
@@ -27,8 +25,6 @@ const router = createBrowserRouter([
             {
                 path: "book/:bookId",
                 element: <Book />,
-                loader: bookLoader,
-                errorElement: <BookBoundery />
 
             },
             {

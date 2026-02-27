@@ -1,16 +1,22 @@
-
-import { useLoaderData, useNavigate } from "react-router-dom"
-import type bookProps from "../../types/livros"
+import {  useNavigate, useParams } from "react-router-dom"
 import Arrow from '../../assets/Arrow.png'
 import style from './styles.module.css'
+import { useBook } from "../../hooks/use-book"
 
 export default function Book(){
-    const book: bookProps = useLoaderData()
     const navigate = useNavigate();
     function handleClick(){
         navigate('/home')
     }
-  
+    const { bookId } = useParams()
+    const { data:book, isPending, isError } = useBook(Number(bookId))
+
+    if(isPending){
+        return <h1>Carregando informações do livro...</h1>
+    }
+    if(isError||!book){
+        return <h1>Erro ao carregar livro</h1>
+    }
     return(
         <section>
             
