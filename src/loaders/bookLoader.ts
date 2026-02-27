@@ -1,5 +1,5 @@
 import type { LoaderFunctionArgs } from "react-router-dom";
-import type bookProps from "../types/Livros";
+import type bookProps from "../types/livros";
 
 export default async function bookLoader({ params }: LoaderFunctionArgs):Promise<bookProps>{
     const response = await fetch (`http://localhost:3000/livros/${params.bookId}`);
