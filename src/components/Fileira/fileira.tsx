@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import type bookProps  from '../../types/Livros'
+import type bookProps  from '../../types/livros'
 import Card from '../Card/Card'
 import style from './styles.module.css'
 import axios from 'axios'

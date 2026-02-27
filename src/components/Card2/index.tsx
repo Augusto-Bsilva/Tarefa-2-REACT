@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import type bookProps from "../../types/Livros";
+import type bookProps from "../../types/livros";
 import style from './styles.module.css'
 
 export default function Card ({ id,titulo ,autor,genero,preco,sinopse,capa }:bookProps){
