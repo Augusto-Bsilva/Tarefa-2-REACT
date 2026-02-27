@@ -23,12 +23,15 @@ class BookService extends baseService {
             
         })
     }
-    public async booksByGenero(genero:string): Promise<HttpResponse<bookProps[]>>{
+    public async booksByGenero(genero:string, titulo?:string): Promise<HttpResponse<bookProps[]>>{
     return this.execute<void, bookProps[]>({
 
             method:"GET",
             url: '/livros',
-            params: { genero: genero }
+            params: { 
+                genero: genero,
+                ...(titulo &&{ titulo_like:titulo } )
+            }
     })
     }
 }
