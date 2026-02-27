@@ -9,13 +9,26 @@ export default function Book(){
         navigate('/home')
     }
     const { bookId } = useParams()
-    const { data:book, isPending, isError } = useBook(Number(bookId))
+    const { data:book, isPending, isError, error } = useBook(Number(bookId))
 
     if(isPending){
         return <h1>Carregando informações do livro...</h1>
     }
     if(isError||!book){
-        return <h1>Erro ao carregar livro</h1>
+
+        const status = (error as any)?.response?.status;
+        switch (status){
+            case 404:
+                return <h1>Livro não encontrado</h1>;
+            case 401:
+                return <h1>Permissão não concedida, acesso negado</h1>;
+            case 400:
+                return <h1>Erro ao carregar livro</h1>;
+            case 500:
+                return <h1>Erro interno do servidor</h1>;
+            default:
+                return <h1>Algo deu errado!</h1>;
+        }
     }
     return(
         <section>
