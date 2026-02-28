@@ -150,3 +150,14 @@
     font-size: 20px;
     color:#ffff
 }
+.system{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 20px;
+    text-align: justify;
+    color: #09093799;
+    margin-top: 3.75rem;
+    margin-left: 3.75rem;
+
+}

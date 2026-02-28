@@ -15,22 +15,22 @@ export default function Book(){
     }
     
     if(isPending){
-        return <h1>Carregando informações do livro...</h1>
+        return <h1 className={style.system}>Carregando informações do livro...</h1>
     }
     else if(isError||!book){
 
         const status = (error as any)?.response?.status;
         switch (status){
             case 404:
-                return <h1>Livro não encontrado</h1>;
+                return <h1 className={style.system}>Livro não encontrado</h1>;
             case 401:
-                return <h1>Permissão não concedida, acesso negado</h1>;
+                return <h1 className={style.system}>Permissão não concedida, acesso negado</h1>;
             case 400:
-                return <h1>Erro ao carregar livro</h1>;
+                return <h1 className={style.system}>Erro ao carregar livro</h1>;
             case 500:
-                return <h1>Erro interno do servidor</h1>;
+                return <h1 className={style.system} >Erro interno do servidor</h1>;
             default:
-                return <h1>Algo deu errado!</h1>;
+                return <h1 className={style.system} >Algo deu errado!</h1>;
         }
     }
     return(
