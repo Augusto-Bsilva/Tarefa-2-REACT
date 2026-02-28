@@ -1,0 +1,40 @@
+.cart{
+    display: flex;
+    flex-direction: row;
+    margin-left:3.75rem;
+    margin-top: 3.125rem;
+
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+    height:auto;
+    
+}
+.title{
+    margin-top: 1.9375rem;
+    margin-left: 3.75rem;
+}
+.title>h1{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    color:#090937;
+    margin-left: .625rem;
+}
+.price{
+    font-family: 'Manrope',sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 32px;
+    color:#090937;
+    margin-left: 500px;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}

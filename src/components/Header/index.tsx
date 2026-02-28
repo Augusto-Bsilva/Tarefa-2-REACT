@@ -12,6 +12,9 @@ export default function Header(){
     function handleBack(){
         navigate('/home')
     }
+    function handleShop(){
+        navigate('cart')
+    }
     return(
         <header className={style.menu}>
             <button onClick={handleBack} className={style.logo}><img src={Logo} className={style.logo}/></button>
@@ -19,7 +22,7 @@ export default function Header(){
                 <button className={style.button} onClick={handleClick}>
                     <img src={Profile} className={style.pic} />
                 </button>
-                <button className={style.button}>
+                <button className={style.button} onClick={handleShop}>
                     <img src={Cart} className={style.pic}/>
                 </button>
             </div>
