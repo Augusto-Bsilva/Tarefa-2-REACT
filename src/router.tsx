@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import Book from './pages/Book';
 import VerMais from './pages/VerMais'
 import RootLayout from "./layouts/RootLayout";
+import Cart from "./pages/Cart";
 
 const router = createBrowserRouter([
     
@@ -30,6 +31,12 @@ const router = createBrowserRouter([
             {
                 path: "vermais/:genero",
                 element: <VerMais/>
+
+
+            },
+              {
+                path: "cart",
+                element: <Cart/>
 
 
             },
