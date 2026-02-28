@@ -133,7 +133,7 @@
     cursor:pointer;
 }
 .buy:active{
-    background-color: #f8461a;
+    background-color: #f81a1a;
     transition: 0.1s;
 }
 .price{

@@ -3,17 +3,27 @@ import Arrow from '../../assets/Arrow.png'
 import style from './styles.module.css'
 import { useBook } from "../../hooks/use-book"
 import useCartStore from "../../stores/CartStore"
+import { useState } from "react"
 
 export default function Book(){
     const navigate = useNavigate();
     const { bookId } = useParams()
     const { data:book, isPending, isError, error } = useBook(Number(bookId))
+    const [add,setAdd] = useState(false)
     const addToCart = useCartStore((state)=> state.addToCart);
     
     function handleClick(){
         navigate('/home')
     }
-    
+    function handleAdd(){
+        if(book){
+            addToCart(book)
+            setAdd(true)
+            setTimeout(()=>{
+                setAdd(false)
+            },2000)
+        }
+    }
     if(isPending){
         return <h1 className={style.system}>Carregando informações do livro...</h1>
     }
@@ -66,7 +76,7 @@ export default function Book(){
             
             </div>
            <div className={style.last}>
-                <button className={style.buy} onClick={() => addToCart(book)}><h1 className={style.price}>R${book.preco}</h1><h1 className={style.add}>Adicionar ao carrinho</h1></button>
+                <button className={style.buy} onClick={handleAdd}><h1 className={style.price}>R${book.preco}</h1><h1 className={style.add}>{add? "Adicionando...":"Adicionar ao carrinho"}</h1></button>
            </div>
         </section>
            
