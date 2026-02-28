@@ -51,8 +51,8 @@ export default function VerMais(){
                     <h1>{genero}</h1>
                 </div>
                 <div className={style.lines}>
-                    {isPending && <h2>Buscando Livros...</h2>}
-                    {isError && <h2>Erro ao carregar livros</h2>}
+                    {isPending && <h2 className={style.system}>Buscando Livros...</h2>}
+                    {isError && <h2 className={style.system}>Erro ao carregar livros</h2>}
                     {!isPending && !isError && livros && livros.length>0?(
                         livros.map((livro)=>(
                         <Card2 

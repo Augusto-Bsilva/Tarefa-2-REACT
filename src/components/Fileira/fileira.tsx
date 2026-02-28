@@ -21,6 +21,8 @@ export default function FileiraGenero ( { genero }: bookGenre ){
                     <button onClick={handleClick}>Ver mais</button>
             </header>
             <div className={style.lineUp}>
+            {isPending && <h2 className={style.system}>Buscando Livros...</h2>}
+            {isError && <h2 className={style.system}>Erro ao carregar livros</h2>}
             {!isPending && !isError && livros && livros.length>0?(
                 livros.map((livro)=>(
                 <Card 

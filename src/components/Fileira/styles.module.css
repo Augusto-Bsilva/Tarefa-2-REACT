@@ -35,3 +35,11 @@
     transition: 0.5s;
     color: #f14d23;
 }
+.system{
+     font-family: 'Manrope',sans-serif;
+    font-weight: 700;
+    font-style: Bold;
+    font-size: 1.5rem;
+    color:#090937;
+    margin-left: .625rem;
+}
