@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import type bookProps from "../../types/livros";
 import style from './styles.module.css'
 
-export default function Card ({ id,titulo ,autor,genero,preco,sinopse,capa }:bookProps){
+export default function Card2 ({ id,titulo ,autor,genero,preco,sinopse,capa }:bookProps){
     
     const navigate = useNavigate()
     function handleClick(){

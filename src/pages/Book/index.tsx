@@ -2,15 +2,18 @@ import {  useNavigate, useParams } from "react-router-dom"
 import Arrow from '../../assets/Arrow.png'
 import style from './styles.module.css'
 import { useBook } from "../../hooks/use-book"
+import useCartStore from "../../stores/CartStore"
 
 export default function Book(){
     const navigate = useNavigate();
+    const { bookId } = useParams()
+    const { data:book, isPending, isError, error } = useBook(Number(bookId))
+    const addToCart = useCartStore((state)=> state.addToCart);
+    
     function handleClick(){
         navigate('/home')
     }
-    const { bookId } = useParams()
-    const { data:book, isPending, isError, error } = useBook(Number(bookId))
-
+    
     if(isPending){
         return <h1>Carregando informações do livro...</h1>
     }
@@ -63,10 +66,11 @@ export default function Book(){
             
             </div>
            <div className={style.last}>
-                <button className={style.buy}><h1 className={style.price}>R${book.preco}</h1><h1 className={style.add}>Adicionar ao carrinho</h1></button>
+                <button className={style.buy} onClick={() => addToCart(book)}><h1 className={style.price}>R${book.preco}</h1><h1 className={style.add}>Adicionar ao carrinho</h1></button>
            </div>
         </section>
            
         
     )
 }
+
