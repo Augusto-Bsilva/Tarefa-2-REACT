@@ -14,7 +14,7 @@ export default function Book(){
     if(isPending){
         return <h1>Carregando informações do livro...</h1>
     }
-    if(isError||!book){
+    else if(isError||!book){
 
         const status = (error as any)?.response?.status;
         switch (status){
