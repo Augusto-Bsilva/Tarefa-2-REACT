@@ -7,3 +7,7 @@ export default interface bookProps{
     sinopse: string,
     capa: string
 }
+
+export interface bookGenre{
+    genero:string
+}

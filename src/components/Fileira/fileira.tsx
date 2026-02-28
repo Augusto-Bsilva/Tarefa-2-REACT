@@ -2,8 +2,9 @@ import Card from '../Card/Card'
 import style from './styles.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useBooks } from '../../hooks/use-books'
+import type { bookGenre } from '../../types/livros'
 
-export default function FileiraGenero ( { genero }: { genero: string } ){
+export default function FileiraGenero ( { genero }: bookGenre ){
     const navigate = useNavigate()
     function handleClick(){
         navigate(`vermais/${genero}`)
