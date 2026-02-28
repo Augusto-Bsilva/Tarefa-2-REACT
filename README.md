@@ -71,4 +71,4 @@ export default defineConfig([
   },
 ])
 ```
-# Tarefa-2-REACT. Coloquei um script "server" para facilitar iniciar o servidor, só usar o comando npm run server.
+# Tarefa-2-REACT
