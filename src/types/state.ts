@@ -11,7 +11,6 @@ export interface ApiHookState<TPayload, TData>{
 }
 
 export type HomeState = ApiHookState<void,bookProps[]>;
-export type CartState = ApiHookState<void,bookProps[]>;
 export type BookState = ApiHookState<number,bookProps>;
 export type VerMaisState = ApiHookState<string,bookProps[]>;
 

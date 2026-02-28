@@ -6,14 +6,7 @@ import { baseService } from "./base-service";
 
 
 class BookService extends baseService {
-
-    public async allBooks(): Promise<HttpResponse<bookProps[]>>{
-        return this.execute<void, bookProps[]>({
-
-            method:"GET",
-            url: '/livros',
-        })
-    }
+    
     public async books(limit: number = 4, genero:string): Promise<HttpResponse<bookProps[]>>{
         return this.execute<void, bookProps[]>({
 
