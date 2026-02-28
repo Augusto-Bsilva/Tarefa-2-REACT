@@ -5,7 +5,12 @@ const useCartStore = create<CartStore>((set) => (
     {
         cart: [],
         addToCart:(book) => set((state)=> ({ cart:[...state.cart,book]})),
-        removeFromCart:(id) => set((state) => ({ cart: state.cart.filter((book) => book.id !== id)}))
+        removeFromCart:(id) => set((state) => {
+            const bookIndex = state.cart.findIndex((book) => book.id === id);
+            return{
+                cart: state.cart.filter((book,index)=> index !== bookIndex)
+            };
+        })
     }
 ))
 
