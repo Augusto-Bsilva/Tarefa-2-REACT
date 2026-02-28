@@ -2,7 +2,7 @@
 .lineUp{
     display: flex;
     flex-direction: row;
-    gap:20px
+    gap:1.25rem;
 }
 
 .superior{
@@ -10,7 +10,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 30px;
+    margin-bottom: 1.875rem;
 }
 .superior>h1{
     font-family: 'Manrope',sans-serif;
