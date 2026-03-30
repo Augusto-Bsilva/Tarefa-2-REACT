@@ -5,7 +5,8 @@ import { bookService } from "../services/book-service";
 export function useBook(id:number): BookState {
     const { data,error,isPending,isSuccess,isError,refetch} = useQuery({
         queryKey:['livro',id],
-        queryFn: async ()=>bookService.bookByID(id).then((res) => res.data)
+        queryFn: async ()=>bookService.bookByID(id).then((res) => res.data),
+        refetchInterval: 1000 * 60 * 5
     });
     return (
         {

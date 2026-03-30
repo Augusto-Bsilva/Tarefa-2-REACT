@@ -5,7 +5,8 @@ import { bookService } from "../services/book-service";
 export function useVerMais(genero:string, titulo:string): VerMaisState {
     const { data,error,isPending,isSuccess,isError,refetch} = useQuery({
         queryKey:['livros-genero',genero, titulo],
-        queryFn: async ()=>bookService.booksByGenero(genero,titulo).then((res) => res.data)
+        queryFn: async ()=>bookService.booksByGenero(genero,titulo).then((res) => res.data),
+        refetchInterval: 1000 * 60 * 5
     });
     return (
         {

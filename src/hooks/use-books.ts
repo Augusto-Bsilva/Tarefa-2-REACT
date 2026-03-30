@@ -5,7 +5,8 @@ import { bookService } from "../services/book-service";
 export function useBooks(genero:string): HomeState {
     const { data,error,isPending,isSuccess,isError,refetch} = useQuery({
         queryKey:['livros-home',genero],
-        queryFn: async ()=>bookService.books(4,genero).then((res) => res.data)
+        queryFn: async ()=>bookService.books(4,genero).then((res) => res.data),
+        refetchInterval: 1000 * 60 * 5
     });
     return (
         {
